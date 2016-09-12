@@ -1,1 +1,1 @@
-python hello.py
+python run.py
