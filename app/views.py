@@ -13,5 +13,5 @@ def index():
     data = cursor.fetchall()[0:30]
     hello = "List with scrap info:"
     return render_template("index.html",
-        hello,
+        hello = hello,
         data = data)
