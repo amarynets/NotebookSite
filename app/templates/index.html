@@ -5,6 +5,14 @@
         <p> {{ post.author.nickname}} says <b> {{ post.body}} </b> </p>
     {% endfor %}
     <table>
+        <tr>
+            <td><h4>Number</h4></td>
+            <td><h4>Image</h4></td>
+            <td><h4>Title</h4></td>
+            <td><h4>Price</h4></td>
+            <td><h4>Characteristics</h4></td>
+            <td><h4>More info</h4></td>
+        </tr>
         {% for i in data %}
             <tr>
                 <td>{{ i[0] }}
@@ -12,7 +20,7 @@
                 <td>{{ i[1] }}</td>
                 <td>{{ i[3] }}</td>
                 <td>{{ i[4] }}</td>
-                <td><a href="{{ i[5] }}">More info here</a><td>
+                <td><a href="{{ i[5] }}">More info</a><td>
             </tr>
         {% endfor %}
     </table>
