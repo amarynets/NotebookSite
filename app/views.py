@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from flask.ext.mysql import MySQL
+from flaskext.mysql import MySQL
 
 mysql = MySQL()
 mysql.init_app(app)
