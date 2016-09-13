@@ -4,4 +4,16 @@
     {% for post in posts %}
         <p> {{ post.author.nickname}} says <b> {{ post.body}} </b> </p>
     {% endfor %}
+    <table>
+        {% for i in data %}
+            <tr>
+                <td>{{ i[0] }}
+                <td><img src="{{ i[2] }}"></td>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[4] }}</td>
+                <td><a href="{{ i[5] }}">More info here</a><td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
