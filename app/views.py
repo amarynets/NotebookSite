@@ -4,14 +4,21 @@ from flaskext.mysql import MySQL
 
 mysql = MySQL()
 mysql.init_app(app)
-conn = mysql.connect()
-cursor = conn.cursor()
+
 
 @app.route('/')
 def index():
-    cursor.execute("SELECT * FROM Notebook")
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM notebook")
     data = cursor.fetchall()[0:30]
+
+    cursor.close()
+    conn.close()
+
     hello = "List with scrap info:"
     return render_template("index.html",
         hello = hello,
         data = data)
+
